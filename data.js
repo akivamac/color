@@ -22,6 +22,7 @@ const COLOR_DATA = {
     }
   ],
   pages: [
+    { name: "Horse", src: "photos/coloring-pages/knabstrupper_horse.jpeg" },
     { name: "Star", src: "photos/coloring-pages/star.svg" },
     { name: "Flower", src: "photos/coloring-pages/flower.svg" },
     { name: "House", src: "photos/coloring-pages/house.svg" },
