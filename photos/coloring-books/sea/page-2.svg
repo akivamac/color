@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<path d="M120 300 A80 80 0 0 1 280 300 Z" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M132 300 q-6 30 0 58" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="132" cy="368" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M166 300 q-3 30 0 58" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="166" cy="368" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M200 300 q0 30 0 58" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="200" cy="368" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M234 300 q3 30 0 58" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="234" cy="368" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M268 300 q6 30 0 58" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="268" cy="368" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="168" cy="240" r="11" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="232" cy="240" r="11" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="172" cy="236" r="4" stroke="black" stroke-width="3" fill="black"></circle>
+<circle cx="228" cy="236" r="4" stroke="black" stroke-width="3" fill="black"></circle>
+<path d="M176 276 Q200 296 224 276" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="150" cy="210" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="240" cy="205" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="130" cy="255" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="268" cy="250" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="200" cy="195" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="150" cy="275" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="248" cy="282" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<path d="M30 90 h20 M40 80 v20 M345 110 h22 M356 99 v22 M325 60 h18 M334 51 v18" fill="none" stroke="black" stroke-width="3"></path>
+</svg>

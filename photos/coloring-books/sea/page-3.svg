@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<ellipse cx="200" cy="250" rx="95" ry="70" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></ellipse>
+<path d="M172 184 L160 146 M228 184 L240 146" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="160" cy="146" r="14" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="240" cy="146" r="14" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="160" cy="146" r="5" stroke="black" stroke-width="3" fill="black"></circle>
+<circle cx="240" cy="146" r="5" stroke="black" stroke-width="3" fill="black"></circle>
+<path d="M170 300 Q150 345 168 372 M185 310 Q178 352 196 376 M215 310 Q222 352 204 376 M230 300 Q250 345 232 372" fill="none" stroke="black" stroke-width="3"></path>
+<path d="M150 322 Q126 310 118 290 M232 322 Q256 310 264 290" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="118" cy="290" r="26" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="282" cy="290" r="26" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="98" cy="272" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="302" cy="272" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M118 290 L128 304 M282 290 L272 304" fill="none" stroke="black" stroke-width="3"></path>
+<path d="M175 250 Q190 262 200 250 Q210 262 225 250" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="170" cy="225" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="230" cy="225" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="148" cy="262" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<circle cx="252" cy="262" r="4" fill="none" stroke="black" stroke-width="3"></circle>
+<path d="M80 81 v18 M71 90 h18" stroke="black" stroke-width="3" fill="none"/>
+<path d="M320 71 v18 M311 80 h18" stroke="black" stroke-width="3" fill="none"/>
+<path d="M40 180 h14 M330 160 h20" fill="none" stroke="black" stroke-width="3"></path>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<ellipse cx="195" cy="255" rx="100" ry="65" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></ellipse>
+<polygon points="288,255 358,203 358,307" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></polygon>
+<circle cx="160" cy="232" r="13" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="166" cy="226" r="4" stroke="black" stroke-width="3" fill="black"></circle>
+<path d="M148 284 Q168 300 194 290" fill="none" stroke="black" stroke-width="3"></path>
+<path d="M232 210 Q240 255 226 298" fill="none" stroke="black" stroke-width="3"></path>
+<polygon points="168,198 198,128 226,198" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></polygon>
+<polygon points="176,318 202,362 226,326" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></polygon>
+<path d="M120 255 Q135 235 146 252" fill="none" stroke="black" stroke-width="3"></path>
+<path d="M172 268 q14 9 28 0 M186 290 q12 8 24 0" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="120" cy="120" r="8" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="96" cy="150" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="140" cy="170" r="4" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="108" cy="200" r="3" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M310 330 L330 305 M350 350 L370 325" fill="none" stroke="black" stroke-width="3"></path>
+</svg>

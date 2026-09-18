@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<path d="M0 250 Q50 220 100 250 T200 250 T300 250 T400 250 V500 H0 Z" fill="#0b3d45"></path>
+<rect y="0" width="400" height="250" fill="#11707f"></rect>
+<text x="200" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#ffee58">UNDER THE</text>
+<text x="200" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="bold" letter-spacing="6" fill="#b2ebf2">SEA</text>
+<ellipse cx="200" cy="320" rx="95" ry="58" fill="#ffd166" stroke="#123c4a" stroke-width="3"></ellipse>
+<polygon points="295,320 355,272 355,368" fill="#ef6f6c" stroke="#123c4a" stroke-width="3"></polygon>
+<path d="M180 258 q-20 0 -26 22" stroke="#123c4a" stroke-width="3" fill="#ffd166"></path>
+<circle cx="168" cy="300" r="12" fill="#ffffff" stroke="#123c4a" stroke-width="3"></circle>
+<circle cx="172" cy="296" r="4" fill="#123c4a"></circle>
+<path d="M176 352 q24 14 48 0" fill="none" stroke="#123c4a" stroke-width="3"></path>
+<circle cx="80" cy="70" r="6" fill="#ffffff" opacity="0.8"></circle>
+<circle cx="300" cy="60" r="4" fill="#ffffff" opacity="0.8"></circle>
+<circle cx="340" cy="120" r="7" fill="#ffffff" opacity="0.8"></circle>
+<circle cx="60" cy="190" r="4" fill="#ffffff" opacity="0.8"></circle>
+<text x="200" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#93c5c9">COLORING BOOK</text>
+</svg>

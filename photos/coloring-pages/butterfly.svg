@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<ellipse cx="200" cy="255" rx="13" ry="85" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></ellipse>
+<path d="M196 170 C96 128 54 192 138 252 C156 264 180 240 196 220 Z" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M204 170 C304 128 346 192 262 252 C244 264 220 240 204 220 Z" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M194 300 C104 330 84 396 160 382 C180 377 192 350 194 320 Z" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M206 300 C296 330 316 396 240 382 C220 377 208 350 206 320 Z" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
+<circle cx="120" cy="218" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="280" cy="218" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="112" cy="252" r="8" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="288" cy="252" r="8" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="124" cy="356" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="276" cy="356" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M200 170 C196 118 210 96 250 70 M200 170 C204 118 190 96 150 70" fill="none" stroke="black" stroke-width="3"></path>
+<circle cx="250" cy="60" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="150" cy="60" r="5" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<path d="M196 260 C200 268 200 268 204 260 M192 330 C196 338 196 338 200 330" fill="none" stroke="black" stroke-width="3"></path>
+<path d="M340 71 v18 M331 80 h18" stroke="black" stroke-width="3" fill="none"/>
+<path d="M60 380 h24 M72 368 v24" fill="none" stroke="black" stroke-width="3"></path>
+</svg>

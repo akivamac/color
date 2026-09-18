@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<circle cx="200" cy="240" r="115" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<ellipse cx="200" cy="240" rx="205" ry="62" transform="rotate(-20 200 240)" fill="none" stroke="black" stroke-width="3"></ellipse>
+<circle cx="155" cy="220" r="16" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="150" cy="215" r="3" stroke="black" stroke-width="2" fill="none"></circle>
+<circle cx="245" cy="275" r="14" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="240" cy="270" r="3" stroke="black" stroke-width="2" fill="none"></circle>
+<circle cx="215" cy="195" r="10" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="210" cy="190" r="3" stroke="black" stroke-width="2" fill="none"></circle>
+<circle cx="265" cy="210" r="8" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="260" cy="205" r="3" stroke="black" stroke-width="2" fill="none"></circle>
+<circle cx="150" cy="300" r="9" fill="white" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></circle>
+<circle cx="145" cy="295" r="3" stroke="black" stroke-width="2" fill="none"></circle>
+<path d="M60 61 v18 M51 70 h18" stroke="black" stroke-width="3" fill="none"/>
+<path d="M335 61 v18 M326 70 h18" stroke="black" stroke-width="3" fill="none"/>
+<path d="M340 291 v18 M331 300 h18" stroke="black" stroke-width="3" fill="none"/>
+<path d="M52 314 v12 M46 320 h12" stroke="black" stroke-width="3" fill="none"/>
+<path d="M60 194 v12 M54 200 h12" stroke="black" stroke-width="3" fill="none"/>
+<path d="M325 159 v12 M319 165 h12" stroke="black" stroke-width="3" fill="none"/>
+<path d="M230 54 v12 M224 60 h12" stroke="black" stroke-width="3" fill="none"/>
+<path d="M120 114 v12 M114 120 h12" stroke="black" stroke-width="3" fill="none"/>
+<path d="M150 70 q7 14 14 0 M320 210 q7 14 14 0" fill="none" stroke="black" stroke-width="3"></path>
+</svg>

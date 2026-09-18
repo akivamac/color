@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>staple and go — coloring</title>
+<style>
+  :root {
+    --ink: #2b2b2b;
+    --paper: #fbf7ef;
+    --line: #ece4d4;
+    --accent: #d97a2b;
+    --muted: #a08a6e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 6px rgba(80, 60, 30, 0.06);
+  }
+  .crayon {
+    width: 26px;
+    height: 14px;
+    border-radius: 3px 1px 1px 3px;
+    box-shadow: 0 1px 0 rgba(60, 40, 20, 0.2);
+    background: repeating-linear-gradient(
+      90deg,
+      #ffd166 0 6px,
+      #ef6f6c 6px 12px,
+      #66c2ff 12px 18px,
+      #9ad1a0 18px 24px
+    );
+  }
+  .brand {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+  }
+  .brand small {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-left: 10px;
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6px 18px 70px;
+  }
+  section h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 34px 0 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  section h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 10px 10px 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover,
+  .card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(80, 60, 30, 0.14);
+    outline: none;
+  }
+  .card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .card .name {
+    margin-top: 9px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+  }
+  .viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: flex;
+    padding: 18px;
+    background: rgba(40, 30, 20, 0.55);
+  }
+  .viewer.hidden { display: none; }
+  .viewer-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f7f2e8;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(20, 15, 10, 0.4);
+  }
+  .viewer-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+  .viewer-top h3 {
+    flex: 1;
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  .btn {
+    font: inherit;
+    cursor: pointer;
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid #d8cdb8;
+    border-radius: 9px;
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 700;
+  }
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .btn.icon {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .viewer-stage {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: #ece3d3;
+    overflow: hidden;
+  }
+  #viewer-img {
+    background: #fff;
+    max-height: calc(100vh - 250px);
+    max-width: calc(100vw - 180px);
+    box-shadow: 0 5px 26px rgba(40, 30, 20, 0.3);
+    border-radius: 4px;
+  }
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #d8cdb8;
+    background: #fff;
+    color: var(--accent);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(40, 30, 20, 0.18);
+  }
+  .nav-prev { left: 16px; }
+  .nav-next { right: 16px; }
+  .viewer-count {
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .print-area { display: none; }
+  @media print {
+    body > * { display: none !important; }
+    .print-area {
+      display: block !important;
+      background: #fff;
+    }
+    .print-page {
+      page-break-after: always;
+      display: block;
+    }
+    .print-page img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <span class="crayon"></span>
+  <span class="brand">staple and go <small>coloring</small></span>
+</header>
+
+<main>
+  <section>
+    <h2>Coloring books</h2>
+    <div class="grid" id="book-grid"></div>
+  </section>
+  <section>
+    <h2>Coloring pages</h2>
+    <div class="grid" id="page-grid"></div>
+  </section>
+</main>
+
+<div class="viewer hidden" id="viewer" role="dialog" aria-modal="true">
+  <div class="viewer-panel">
+    <div class="viewer-top">
+      <button class="btn icon" id="btn-back" aria-label="Back">&larr;</button>
+      <h3 id="viewer-title"></h3>
+      <button class="btn primary" id="btn-print-book">print book</button>
+      <button class="btn primary" id="btn-print-page">print page</button>
+      <button class="btn icon" id="btn-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="viewer-stage">
+      <img id="viewer-img" alt="">
+      <button class="nav nav-prev" id="nav-prev" aria-label="Previous page">&lt;</button>
+      <button class="nav nav-next" id="nav-next" aria-label="Next page">&gt;</button>
+    </div>
+    <div class="viewer-count" id="viewer-count"></div>
+  </div>
+</div>
+
+<div class="print-area" id="print-area"></div>
+
+<script src="data.js"></script>
+<script>
+  (function () {
+    var data = window.COLOR_DATA;
+    var bookGrid = document.getElementById("book-grid");
+    var pageGrid = document.getElementById("page-grid");
+    var viewer = document.getElementById("viewer");
+    var viewerImg = document.getElementById("viewer-img");
+    var viewerTitle = document.getElementById("viewer-title");
+    var viewerCount = document.getElementById("viewer-count");
+    var printArea = document.getElementById("print-area");
+    var btnPrintBook = document.getElementById("btn-print-book");
+    var btnPrintPage = document.getElementById("btn-print-page");
+    var navPrev = document.getElementById("nav-prev");
+    var navNext = document.getElementById("nav-next");
+    var state = null;
+
+    function card(imgSrc, name) {
+      var el = document.createElement("div");
+      el.className = "card";
+      el.tabIndex = 0;
+      var img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = name;
+      img.loading = "lazy";
+      el.appendChild(img);
+      var label = document.createElement("div");
+      label.className = "name";
+      label.textContent = name;
+      el.appendChild(label);
+      return el;
+    }
+
+    data.books.forEach(function (book) {
+      var c = card(book.cover, book.name);
+      c.addEventListener("click", function () { openBook(book.id); });
+      c.addEventListener("keydown", function (e) { if (e.key === "Enter") openBook(book.id); });
+      bookGrid.appendChild(c);
+    });
+
+    data.pages.forEach(function (p) {
+      var c = card(p.src, p.name);
+      c.addEventListener("click", function () { openPage(p.name, p.src); });
+      c.addEventListener("keydown", function (e) { if (e.key === "Enter") openPage(p.name, p.src); });
+      pageGrid.appendChild(c);
+    });
+
+    function bookById(id) {
+      for (var i = 0; i < data.books.length; i++) {
+        if (data.books[i].id === id) return data.books[i];
+      }
+      return null;
+    }
+
+    function openBook(id) {
+      var book = bookById(id);
+      if (!book) return;
+      state = { mode: "book", title: book.name, pages: book.pages, i: 0 };
+      show();
+    }
+
+    function openPage(name, src) {
+      state = { mode: "page", title: name, pages: [src], i: 0 };
+      show();
+    }
+
+    function show() {
+      viewerTitle.textContent = state.title;
+      var isBook = state.mode === "book";
+      btnPrintBook.style.display = isBook ? "" : "none";
+      navPrev.style.display = isBook ? "" : "none";
+      navNext.style.display = isBook ? "" : "none";
+      navPrev.disabled = state.i === 0;
+      navNext.disabled = state.i === state.pages.length - 1;
+      viewerCount.textContent = state.pages.length > 1
+        ? "page " + (state.i + 1) + " of " + state.pages.length
+        : "ready to print";
+      setImage(state.pages[state.i]);
+      viewer.classList.remove("hidden");
+    }
+
+    function setImage(src) {
+      viewerImg.src = src;
+      viewerImg.alt = state.title;
+      printArea.innerHTML = "";
+      var div = document.createElement("div");
+      div.className = "print-page";
+      var img = document.createElement("img");
+      img.src = src;
+      div.appendChild(img);
+      printArea.appendChild(div);
+    }
+
+    function back() {
+      if (!state) return;
+      viewer.classList.add("hidden");
+      state = null;
+    }
+
+    function step(delta) {
+      if (!state || state.mode !== "book") return;
+      var next = state.i + delta;
+      if (next < 0 || next >= state.pages.length) return;
+      state.i = next;
+      show();
+    }
+
+    btnPrintBook.addEventListener("click", function () {
+      if (!state || state.mode !== "book") return;
+      printArea.innerHTML = "";
+      state.pages.forEach(function (src) {
+        var div = document.createElement("div");
+        div.className = "print-page";
+        var img = document.createElement("img");
+        img.src = src;
+        div.appendChild(img);
+        printArea.appendChild(div);
+      });
+      window.print();
+    });
+
+    btnPrintPage.addEventListener("click", function () {
+      if (!state) return;
+      window.print();
+    });
+
+    document.getElementById("btn-back").addEventListener("click", back);
+    document.getElementById("btn-close").addEventListener("click", back);
+    navPrev.addEventListener("click", function () { step(-1); });
+    navNext.addEventListener("click", function () { step(1); });
+
+    viewer.addEventListener("click", function (e) {
+      if (e.target === viewer) back();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!state) return;
+      if (e.key === "Escape") back();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+
+    window.addEventListener("afterprint", function () {
+      if (state) setImage(state.pages[state.i]);
+    });
+  })();
+</script>
+</body>
+</html>

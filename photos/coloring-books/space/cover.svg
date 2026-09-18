@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+<rect width="400" height="500" fill="#ffffff" stroke="none"></rect>
+<rect width="400" height="500" fill="#0d1f3d"></rect>
+<circle cx="320" cy="80" r="3" fill="#ffffff"></circle>
+<circle cx="60" cy="120" r="2" fill="#ffffff"></circle>
+<circle cx="340" cy="420" r="3" fill="#ffffff"></circle>
+<circle cx="70" cy="340" r="2" fill="#ffffff"></circle>
+<circle cx="150" cy="60" r="2" fill="#ffffff"></circle>
+<text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="bold" fill="#ffd54f">SPACE</text>
+<text x="200" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="4" fill="#81d4fa">ADVENTURES</text>
+<ellipse cx="200" cy="300" rx="32" ry="88" fill="#eef0f2" stroke="#1b263b" stroke-width="3"></ellipse>
+<polygon points="168,308 138,348 176,342" fill="#ef6f6c" stroke="#1b263b" stroke-width="3"></polygon>
+<polygon points="232,308 262,348 224,342" fill="#ef6f6c" stroke="#1b263b" stroke-width="3"></polygon>
+<polygon points="200,388 180,424 220,424" fill="#ef6f6c" stroke="#1b263b" stroke-width="3"></polygon>
+<circle cx="200" cy="270" r="16" fill="#66c2ff" stroke="#1b263b" stroke-width="3"></circle>
+<path d="M200 388 Q184 418 200 448 Q216 418 200 388" fill="#ffb347"></path>
+<text x="200" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#9db7d6">COLORING BOOK</text>
+</svg>

@@ -1,0 +1,56 @@
+
+sticky header... (maybe staple and go)
+__________________________________________________________________________________________________________________________
+
+Coloring books ---------------------------------------
+
+[coloring book 1 front page]
+
+
+
+Coloring pages ----------------------------------------
+
+[coloring page 1]
+     ⁿᵃᵐᵉ
+
+
+
+# what inside (after clicking on) a coloring book: 
+
+            [print book (open print diolog, ctrl+p should also work)]          [print page]
+
+        +---------------------------------------------------------------------------------------+
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+(back) <|                                                                                       |> (next)
+        |                page  content                                                          |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        |                                                                                       |
+        +---------------------------------------------------------------------------------------+
+
+
+# same thing, but without print book or back/next buttons
