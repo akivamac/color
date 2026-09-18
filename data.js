@@ -23,11 +23,6 @@ window.COLOR_DATA = {
   ],
   pages: [
     { name: "Horse", src: "photos/coloring-pages/knabstrupper_horse.jpeg" },
-    { name: "Star", src: "photos/coloring-pages/star.svg" },
-    { name: "Flower", src: "photos/coloring-pages/flower.svg" },
-    { name: "House", src: "photos/coloring-pages/house.svg" },
-    { name: "Robot", src: "photos/coloring-pages/robot.svg" },
-    { name: "Butterfly", src: "photos/coloring-pages/butterfly.svg" },
-    { name: "Castle", src: "photos/coloring-pages/castle.svg" }
+    { name: "Original", src: "photos/coloring-pages/original_horse.jpeg" }
   ]
 };
