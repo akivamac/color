@@ -4,6 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>staple and go — coloring</title>
+<script>
+(function () {
+  var LOG = [];
+  function push(msg) { LOG.push(new Date().toISOString().slice(11, 19) + " " + msg); }
+  window.addEventListener("error", function (e) {
+    var t = e.target;
+    if (t && t.tagName === "IMG") push("IMG FAILED: " + t.src);
+    push("ERR: " + (e.message || "error"));
+  }, true);
+  window.addEventListener("unhandledrejection", function (e) {
+    push("PROMISE: " + (e.reason && e.reason.message ? e.reason.message : e.reason));
+  });
+  ["log", "warn", "error"].forEach(function (m) {
+    var orig = console[m].bind(console);
+    console[m] = function () {
+      orig.apply(null, arguments);
+      push(m.toUpperCase() + ": " + Array.prototype.slice.call(arguments).join(" "));
+    };
+  });
+  push("debug boot");
+  document.addEventListener("DOMContentLoaded", function () { push("DOMContentLoaded"); });
+  window.__debug = {
+    log: function (msg) { push(msg); },
+    entries: function () { return LOG; }
+  };
+})();
+</script>
 <style>
   :root {
     --ink: #2b2b2b;
@@ -218,6 +245,59 @@
     color: var(--muted);
   }
   .print-area { display: none; }
+  #dbg-toggle {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 60;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d8cdb8;
+    background: #fff;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(40, 30, 20, 0.2);
+  }
+  #dbg-panel {
+    position: fixed;
+    right: 14px;
+    bottom: 62px;
+    z-index: 60;
+    width: 300px;
+    max-height: 45vh;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(40, 30, 20, 0.25);
+    padding: 10px;
+    display: none;
+  }
+  #dbg-panel.open { display: block; }
+  #dbg-panel button {
+    font: inherit;
+    font-size: 12px;
+    border: 1px solid #d8cdb8;
+    background: #fff;
+    border-radius: 7px;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  #dbg-panel pre {
+    margin: 8px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+    max-height: 32vh;
+    overflow: auto;
+    background: #fbf7ef;
+    border-radius: 8px;
+    padding: 8px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
   @media print {
     body > * { display: none !important; }
     .print-area {
@@ -273,10 +353,53 @@
 
 <div class="print-area" id="print-area"></div>
 
+<button id="dbg-toggle" title="diagnostics">?</button>
+<div id="dbg-panel">
+  <button id="dbg-check">check images</button>
+  <button onClick="document.getElementById('dbg-log').scrollTop=document.getElementById('dbg-log').scrollHeight">bottom</button>
+  <pre id="dbg-log"></pre>
+</div>
+
 <script src="data.js"></script>
 <script>
   (function () {
+    var toggle = document.getElementById("dbg-toggle");
+    var panel = document.getElementById("dbg-panel");
+    var pre = document.getElementById("dbg-log");
+    var showing = false;
+
+    function render() {
+      pre.textContent = (window.__debug ? window.__debug.entries() : ["debug missing"]).join("\n");
+    }
+
+    toggle.addEventListener("click", function () {
+      showing = !showing;
+      panel.classList.toggle("open", showing);
+      if (showing) { render(); pre.scrollTop = pre.scrollHeight; }
+    });
+
+    document.getElementById("dbg-check").addEventListener("click", function () {
+      if (!window.__debug) return;
+      window.__debug.log("checking " + document.images.length + " images...");
+      Array.prototype.forEach.call(document.images, function (img) {
+        var start = Date.now();
+        fetch(img.src, { method: "GET" }).then(function (r) {
+          window.__debug.log("img " + r.status + " (" + (Date.now() - start) + "ms) " + img.src.split("/").pop());
+        }).catch(function (e) {
+          window.__debug.log("img FETCH-ERR " + img.src.split("/").pop() + " :: " + e.message);
+        });
+      });
+      render();
+    });
+
+    window.addEventListener("DOMContentLoaded", render);
+  })();
+</script>
+
+<script>
+  (function () {
     var data = window.COLOR_DATA;
+    window.__debug && window.__debug.log("data: " + (data ? "loaded, " + data.books.length + " books, " + data.pages.length + " pages" : "MISSING"));
     var bookGrid = document.getElementById("book-grid");
     var pageGrid = document.getElementById("page-grid");
     var viewer = document.getElementById("viewer");
