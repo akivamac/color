@@ -1,4 +1,4 @@
-const COLOR_DATA = {
+window.COLOR_DATA = {
   books: [
     {
       id: "space",
